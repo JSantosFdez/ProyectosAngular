@@ -1,0 +1,13 @@
+.pointer{
+    cursor: pointer;
+}
+
+p{
+    font-size: 12px;
+}
+
+li{
+    margin-bottom: 5px;
+    margin-top: 5px;
+    border-radius: 5px;
+}

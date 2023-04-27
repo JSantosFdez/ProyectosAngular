@@ -1,0 +1,11 @@
+
+<app-loading *ngIf="!isUserLocationReady; else elseTemplate"> </app-loading>
+    
+
+<ng-template #elseTemplate>
+    <app-map-view></app-map-view>
+    <app-btn-my-location></app-btn-my-location>
+    <app-search-bar></app-search-bar>
+</ng-template>
+
+<app-angular-logo></app-angular-logo>

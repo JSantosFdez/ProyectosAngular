@@ -1,0 +1,58 @@
+
+<h1 class="mt-5">Agregar producto</h1>
+<hr>
+
+<form [formGroup]="miFormulario">
+
+    <div class="row g-3 align-items-center mb-3">
+
+        <div class="col-auto">
+            <label class="col-form-label">Nombre:</label>
+        </div>
+
+        <div class="col-auto">
+            <input class="form-control"
+                    formControlName="nombre">
+        </div>
+        <div class="col-auto">
+            <span
+                    error-msg
+                    [mensaje]="texto1"
+                    [color] = "color"
+                    [valido]="!tieneError('nombre')">
+            </span>
+        </div>
+
+    </div>
+
+    <!-- Botón del formulario -->
+    <div class="row mt-3">
+        <div class="col">
+            <button class="btn btn-primary"
+                (click)="cambiarNombre()">
+                Guardar
+            </button>
+            
+            &nbsp;
+            <button class="btn btn-primary ml-1"
+                (click)="cambiarColor()">
+                Cambiar color
+            </button>
+        </div>
+    </div>
+
+</form>
+
+<h3 class="mt-5">Formulario</h3>
+<pre>Valid:{{miFormulario.valid}}</pre>
+<pre>Value:{{miFormulario.value | json}}</pre>
+
+<!-- para mandar la referencia del elemento se usa * antes del nombre de la directiva-->
+<div class="row mt-5" 
+*customIf="miFormulario.valid">
+    <div class="col">
+        <div class="alert alert-primary">
+            TODO OK!
+        </div>
+    </div>
+</div>
